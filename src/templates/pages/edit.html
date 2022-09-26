@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mb-3">
+        <h1>Edit contact</h1>
+    </div>
+    <div class="row justify-content-center mb-3">
+        <img
+                src="{{contact.path}}"
+                width="225"
+                height="225"
+                alt="150"
+                style="object-fit: contain"
+        />
+    </div>
+    <div class="row justify-content-center">
+        <form class="col-sm-6" action="/address_book/edit/{{contact.id}}" method="post">
+            <div class="form-group">
+                <input
+                        class="form-control col-sm-12"
+                        type="text"
+                        placeholder="Fullname"
+                        name="fullname"
+                        value="{{contact.fullname}}"
+                />
+                <input
+                        class="form-control col-sm-12"
+                        type="text"
+                        placeholder="Email"
+                        name="email"
+                        value="{{contact.email}}"
+                />
+                <input
+                        class="form-control col-sm-12"
+                        type="text"
+                        placeholder="Phone"
+                        name="phone"
+                        value="{{contact.phone}}"
+                />
+                <input
+                        class="form-control col-sm-12"
+                        type="text"
+                        placeholder="Description"
+                        name="description"
+                        value="{{contact.description}}"
+                />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary col-sm-12" type="submit">
+                    Update
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
